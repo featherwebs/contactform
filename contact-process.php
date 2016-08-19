@@ -38,14 +38,13 @@ if(isset($_POST['full_name'], $_POST['email'], $_POST['contact_number'], $_POST[
 			$mail->isSMTP();                                      // Set mailer to use SMTP
 			$mail->Host = 'gator4032.hostgator.com';  // Specify main and backup SMTP servers
 			$mail->SMTPAuth = true;                               // Enable SMTP authentication
-			$mail->Username = 'akash@featherwebs.com';                 // SMTP username
-			$mail->Password = 'p$ychotic123';                           // SMTP password
+			$mail->Username = 'youremail@domainname.com';                 // SMTP username
+			$mail->Password = 'y0urp@$$w0rd';                           // SMTP password
 			$mail->SMTPSecure = 'TLS';                            // Enable TLS encryption, `ssl` also accepted
 			$mail->Port = 25;                                    // TCP port to connect to
 
-			$mail->setFrom('akash@featherwebs.com', 'Himalayan carpet Webiste');
-			$mail->addAddress('featherwebs@gmail.com', 'Email From Webiste');     // Add a recipient
-			// $mail->addAddress('ellen@example.com');               // Name is optional
+			$mail->setFrom('youremail@domainname.com', 'Name to be displayed'); //send email from
+			$mail->addAddress('emailSendto@yourdomain.com', 'title to be displayed');     // Add a recipient
 			$mail->addReplyTo($fields['email'], $fields['name']);
 			
 			// $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
@@ -70,7 +69,7 @@ if(isset($_POST['full_name'], $_POST['email'], $_POST['contact_number'], $_POST[
 }
 else{
 	$errors[]='something went wrong';
-	echo "apple";
+	
 }
 
 $_SESSION['errors'] = $errors;
